@@ -5,6 +5,9 @@ dotenv.config()
 const cors = require('cors')
 app.use(cors())
 
+const connectToDB = require('./db/db')
+connectToDB()
+
 app.get('/', (req,res)=>{
     console.log('route hit')
     res.send("Hello world")
